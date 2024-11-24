@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+        
+    <title>homepage</title>
+    <style>
+        .employee-card {
+    border: 2px solid #007BFF; /* Blue border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    width: 300px;
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 20px auto; /* Center the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.employee-card h5 {
+    font-size: 18px;
+    color: #333; /* Dark gray text */
+    margin: 5px 0;
+}
+
+.employee-card p {
+    font-size: 14px;
+    color: #666; /* Medium gray text */
+    margin: 10px 0;
+}
+
+.action-link {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.action-link.update {
+    background-color: #28a745; /* Green */
+}
+
+.action-link.delete {
+    background-color: #dc3545; /* Red */
+}
+
+.action-link:hover {
+    opacity: 0.9; /* Slightly dim on hover */
+}
+
+    </style>
+</head>
+<body>
+    <h1>All Employee List</h1>
+    <ul>
+        {% for employee in employee_data %}
+        
+<!-- <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"> -->
+
+    <!-- <h5 >{{employee.name}} </h5>
+    <h5>{{employee.designation}} </h5>
+    <p>{{employee.description}}</p>
+    <p>
+        <a href="{% url 'update_data' employee.pk%}">Update</a>
+        <a href="{% url 'delete_data' employee.pk%}">Delete</a>
+    </p> -->
+    <div class="employee-card">
+        <h5>{{ employee.name }}</h5>
+        <h5>{{ employee.designation }}</h5>
+        <p>{{ employee.description }}</p>
+        <p>
+          
+            {% block content %}
+
+            {% endblock %}
+        </p>
+    </div>
+<!-- </a> -->
+        {% endfor %}
+    </ul>
+</body>
+</html>

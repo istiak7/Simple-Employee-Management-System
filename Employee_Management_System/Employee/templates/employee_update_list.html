@@ -1,0 +1,5 @@
+{% extends 'base_employee.html' %}
+
+{% block content%}
+<a href="{% url 'update_data' employee.pk %}" class="action-link update">Update</a>
+{% endblock %}

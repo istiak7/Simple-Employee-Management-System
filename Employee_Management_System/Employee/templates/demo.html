@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        nav {
+            background-color: #014911;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Employee Management</h1>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'display' %}">Home</a>
+            <a href="{% url 'add' %}">Add Employee</a>
+            <a href="{% url 'update_first' %}">Update Employee</a>
+            <a href="{% url 'delete_first' %}">Delete Employee</a>
+            <a href="{% url 'register' %}">SignUp</a>
+            <a href="{% url 'login' %}">SignIn</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </nav>
+    <div class="content">
+        <h2>Welcome to Employee Management System</h2>
+    </div>
+</body>
+</html>
